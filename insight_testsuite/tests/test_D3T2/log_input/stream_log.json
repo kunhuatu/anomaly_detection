@@ -1,0 +1,6 @@
+{"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "1", "amount": "200.00"}
+{"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "2", "amount": "300.00"}
+{"event_type":"unfriend", "timestamp":"2017-06-13 11:33:02", "id1": "1", "id2": "4"}
+{"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "5", "amount": "800.00"}
+{"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "1", "amount": "1000.00"}
+{"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "3", "amount": "2000.00"}

@@ -1,0 +1,8 @@
+{"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "1", "amount": "100.00"}
+{"event_type":"unfriend", "timestamp":"2017-06-13 11:33:01", "id1": "1", "id2": "4"}
+{"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "1", "amount": "200.00"}
+{"event_type":"unfriend", "timestamp":"2017-06-13 11:33:01", "id1": "2", "id2": "3"}
+{"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "1", "amount": "300.00"}
+{"event_type":"befriend", "timestamp":"2017-06-13 11:33:01", "id1": "1", "id2": "3"}
+{"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "4", "amount": "400.00"}
+{"event_type":"purchase", "timestamp":"2017-06-13 11:33:02", "id": "4", "amount": "500.00"}
