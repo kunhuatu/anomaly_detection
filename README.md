@@ -50,7 +50,7 @@ In each user,
 To speed up, each information of an user are updated in a rolling style. But if friendships have changed ('befriend' or 'unfriend' events), the network related attributes will be rebuild using `build_network_stats`.
 
 #### Auxiliary (json_parser.py):
-Read: parse json string into `OrderedDict`, and add an additional timestamp to represent the stream-in time.   
-Write: translate `OrderedDict` into json string.
+Read: parse a json string into `OrderedDict`, and add an additional timestamp to represent the stream-in time.   
+Write: translate `OrderedDict` into a json string.
 
 
