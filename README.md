@@ -36,10 +36,10 @@ The task has been divided into three different levels: processing level, detecto
     `T` : the number of consecutive purchases made by a user's social network (not including the user's own purchases)
     
 2. Create a detector and initialize the detector with the historical events in batch log file
-3. For each event in stream-in log file, detect whether it is a anomalous purchase, and then update the detector with the new event.
+3. For each event in stream-in log file, use detector to determine whether it is a anomalous purchase, and then update the detector with the new event.
 
 #### Detector level (anomaly_detector.py):
-Keep track of all users appeared in events. When a new event coming in, update the information in related users (using BFS to search in `D` degree network).
+Keep track of all users appeared in events. When a new event coming in, create a new user if he/she does not exist, and then update the information in related users (using BFS to search in `D` degree network).
 
 #### User level (user.py):
 In each user,
