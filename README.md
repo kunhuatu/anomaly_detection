@@ -10,4 +10,5 @@ argparse, time, datetime, heapq (all of these are already in python standard lib
 #### option 1:
 Use the following in command-line:
 
-    anomaly_detection~$ python
+    anomaly_detection~$ python process_log.py batch_log stream_log flagged_purchases [-v][-vv]
+    
