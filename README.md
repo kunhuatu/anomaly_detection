@@ -33,8 +33,8 @@ The task has been divided into three different levels: processing level, detecto
 1. Get the value of
 
     `D` : the number of degrees that defines a user's social network.
-    
     `T` : the number of consecutive purchases made by a user's social network (not including the user's own purchases)
+    
 2. Create a detector and initialize the detector with the historical events in batch log file
 3. For each event in stream-in log file, detect whether it is a anomalous purchase, and then update the detector with the new event.
 
