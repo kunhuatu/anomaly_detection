@@ -31,6 +31,7 @@ The task has been divided into three different levels: processing level, detecto
 
 #### Processing level (process_log.py):
 1. Get the value of
+
     `D` : the number of degrees that defines a user's social network.
     `T` : the number of consecutive purchases made by a user's social network (not including the user's own purchases)
 2. Create a detector and initialize the detector with the historical events in batch log file
