@@ -37,6 +37,6 @@ The task has been divided into three different levels: processing level, detecto
 Keep track of all users appeared in events. When a new event coming in, update the information in related users (using BFS to search in `D` degree network).
 
 #### User level (user.py):
-In each user, keep track of his/her last `T` purchases (`last_T_purchase`)(using heap), and the last `T` purchases in his/her `D` degree network (`network purchase`) (not including the user's own purchases). At the same time, also keep track of the mean and standard deviation of the  
+In each user, keep track (using heap) of his/her last `T` purchases (`last_T_purchase`), and the last `T` purchases in his/her `D` degree network (`network purchase`) (not including the user's own purchases). At the same time, also keep track of the mean (`mean`) and standard deviation (`std`) of the purchases made in user's network.
 
 
