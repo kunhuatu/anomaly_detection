@@ -1,4 +1,4 @@
 # Anomaly Detection
-## Used package
-1. argparse
-2. 
+## Used packages
+argparse, time, datetime, heapq
+(all of these are already in python standard library)
