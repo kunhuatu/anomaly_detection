@@ -47,4 +47,6 @@ In each user,
 2. Keep track (using heap) of his/her last `T` purchases (`last_T_purchase`), and the last `T` purchases in his/her `D` degree network (`network purchase`) (not including the user's own purchases). 
 3. Keep track of the mean (`mean`) and standard deviation (`std`) of the purchases made in user's network.
 
+To speed up, each information of an user are updated in a rolling style. But if friendships have changed ('befriend' or 'unfriend' events), the network related attributes will be rebuild using `build_network_stats`.
+
 
