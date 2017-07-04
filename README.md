@@ -1,4 +1,4 @@
-# anomaly_detection
+# Anomaly Detection
 Designed for insight data engineering coding challenge. 
 Please find out the situation setting in 
 https://github.com/InsightDataScience/anomaly_detection
@@ -12,3 +12,10 @@ Use the following in command-line:
 
     anomaly_detection~$ python ./src/process_log.py ./log_input/batch_log.json ./log_input/stream_log.json ./log_output/flagged_purchases.json [-v][-vv]
 `-v` and `-vv` : increase verbosity
+
+#### option 2:
+Directlt execute `run.sh` in command-line:
+
+    anomaly_detection~$ ./run.sh
+
+## Approach summary
