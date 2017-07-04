@@ -14,15 +14,18 @@ Use the following in command-line:
 
 `batch_log` : file of historical event logs
 
-`stream_log` : file of stream-in logs
+`stream_log` : file of stream-in event logs
 
 `flagged_purchases` : file to output flagged purchases (Flagged purchases would be write-in as a newline, and would not overwrite the original content.)
 
 `-v` and `-vv` : increase verbosity
 
 #### option 2:
-Directlt execute `run.sh` in command-line (with structured folder and filename):
+Directlt execute `run.sh` in command-line (with structured default folder and filename):
 
     anomaly_detection~$ ./run.sh
 
 ## Approach summary
+
+The task has been divided into three different levels: processing level, detector level, user level.
+Processing level (process_log.py) : 
