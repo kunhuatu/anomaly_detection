@@ -3,7 +3,9 @@ Designed for insight data engineering coding challenge.
 Please find out the situation setting in 
 https://github.com/InsightDataScience/anomaly_detection
 
-## Used packages
+## Environment
+Python 2, 3 (tested on python 2.7 and 3.5)
+### Used packages
 argparse, time, datetime, heapq, math (all of these are already in python standard library)
 
 ## Usage
