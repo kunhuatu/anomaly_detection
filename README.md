@@ -31,6 +31,5 @@ The task has been divided into three different levels: processing level, detecto
 
 #### Processing level (process_log.py):
 1. Take batch log file in, create a detector and initialize the detector with the historical events
-
 2. Ta
 
