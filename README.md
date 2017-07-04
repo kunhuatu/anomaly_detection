@@ -4,7 +4,7 @@ Please find out the situation setting in
 https://github.com/InsightDataScience/anomaly_detection
 
 ## Used packages
-argparse, time, datetime, heapq (all of these are already in python standard library)
+argparse, time, datetime, heapq, math (all of these are already in python standard library)
 
 ## Usage
 #### option 1:
