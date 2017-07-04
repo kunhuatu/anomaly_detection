@@ -30,6 +30,9 @@ Directlt execute `run.sh` in command-line (with structured default folder and fi
 The task has been divided into three different levels: processing level, detector level, user level.
 
 #### Processing level (process_log.py):
-1. Take batch log file in, create a detector and initialize the detector with the historical events
-2. Ta
+1. Create a detector and initialize the detector with the historical events in batch log file
+2. For each event in stream-in log file, detect whether it is a anomalous purchase, and then update the detector with the new event.
+
+#### Detector level (anomaly_detector.py):
+
 
