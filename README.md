@@ -1,5 +1,5 @@
 # Anomaly Detection
-Designed for insight data engineering coding challenge. Please find out the situation setting in 
+Designed for insight data engineering coding challenge.\nPlease find out the situation setting in 
 https://github.com/InsightDataScience/anomaly_detection
 
 ## Used packages
