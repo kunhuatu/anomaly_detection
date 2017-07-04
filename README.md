@@ -7,3 +7,5 @@ https://github.com/InsightDataScience/anomaly_detection
 argparse, time, datetime, heapq (all of these are already in python standard library)
 
 ## Usage
+#### option 1:
+Use the following in command-line:
