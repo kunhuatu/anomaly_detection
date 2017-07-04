@@ -12,4 +12,5 @@ Use the following in command-line:
 
     anomaly_detection~$ python ./src/process_log.py batch_log stream_log flagged_purchases [-v][-vv]
     
-'batch_log' : filepath of batch log 
+`batch_log` : filepath of batch log 
+
