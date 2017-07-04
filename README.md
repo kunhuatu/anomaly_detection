@@ -34,8 +34,8 @@ The task has been divided into three different levels: processing level, detecto
 2. For each event in stream-in log file, detect whether it is a anomalous purchase, and then update the detector with the new event.
 
 #### Detector level (anomaly_detector.py):
-  Keep track of all users appeared in events. When a new event coming in, update the information in related users. 
+Keep track of all users appeared in events. When a new event coming in, update the information in related users. (use BFS to search in `D` degree network) 
 
 #### User level (user.py):
-In each user, keep track of his/her last T purchase
+In each user, keep track of his/her last T purchase (using heap)
 
