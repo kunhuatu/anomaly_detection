@@ -29,5 +29,8 @@ Directlt execute `run.sh` in command-line (with structured default folder and fi
 
 The task has been divided into three different levels: processing level, detector level, user level.
 
-#### Processing level (process_log.py)
+#### Processing level (process_log.py):
+1. Take batch log file in, create a detector and initialize the detector with the historical events
+
+2. Ta
 
