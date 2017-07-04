@@ -30,8 +30,11 @@ Directlt execute `run.sh` in command-line (with structured default folder and fi
 The task has been divided into three different levels: processing level, detector level, user level.
 
 #### Processing level (process_log.py):
-1. Create a detector and initialize the detector with the historical events in batch log file
-2. For each event in stream-in log file, detect whether it is a anomalous purchase, and then update the detector with the new event.
+1. Get the value of
+    `D` : the number of degrees that defines a user's social network.
+    `T` : the number of consecutive purchases made by a user's social network (not including the user's own purchases)
+2. Create a detector and initialize the detector with the historical events in batch log file
+3. For each event in stream-in log file, detect whether it is a anomalous purchase, and then update the detector with the new event.
 
 #### Detector level (anomaly_detector.py):
 Keep track of all users appeared in events. When a new event coming in, update the information in related users (using BFS to search in `D` degree network).
