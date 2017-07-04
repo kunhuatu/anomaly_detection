@@ -6,7 +6,7 @@ https://github.com/InsightDataScience/anomaly_detection
 ## Environment
 Python 2, 3 (tested on python 2.7 and 3.5)
 #### Used packages
-argparse, time, datetime, heapq, math (all of these are already in python standard library)
+`argparse`, `time`, `datetime`, `heapq`, `math`, `collections` (all of these are already in python standard library)
 
 ## Usage
 #### option 1:
