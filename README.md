@@ -27,7 +27,7 @@ Directlt execute `run.sh` in command-line (with structured default folder and fi
 
 ## Approach summary
 
-The task has been divided into three different levels: processing level, detector level, user level.
+The task has been divided into three different levels: processing level, detector level, user level. An auxiliary `json_parser` is used to read and write json format. 
 
 #### Processing level (process_log.py):
 1. Get the value of
