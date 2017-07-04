@@ -38,7 +38,8 @@ Keep track of all users appeared in events. When a new event coming in, update t
 
 #### User level (user.py):
 In each user,
-1. Keep track (using heap) of his/her last `T` purchases (`last_T_purchase`), and the last `T` purchases in his/her `D` degree network (`network purchase`) (not including the user's own purchases). 
-2. Keep track of the mean (`mean`) and standard deviation (`std`) of the purchases made in user's network.
+1. Keep track of the user's friends (`D`=1)
+2. Keep track (using heap) of his/her last `T` purchases (`last_T_purchase`), and the last `T` purchases in his/her `D` degree network (`network purchase`) (not including the user's own purchases). 
+3. Keep track of the mean (`mean`) and standard deviation (`std`) of the purchases made in user's network.
 
 
