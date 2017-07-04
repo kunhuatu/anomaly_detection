@@ -50,7 +50,7 @@ def write_json(obj):
         for k, v in d.items():
             if re.match('id*', k): d[k] = str(v)
             if k == 'amount' or k == 'mean' or k == 'sd': 
-                d[k] = '{:.3f}'.format(v)[:-1]
+                d[k] = truncate(v, 2)
             if k == 'timestamp': 
                 d[k] = str(datetime.fromtimestamp(v))
         return d
@@ -64,3 +64,11 @@ def get_timestamp(dt):
     if sys.version_info.major == 3:
         return dt.timestamp()
     return time.mktime(dt.timetuple()) + dt.microsecond / 1e6
+
+
+def truncate(num, nb_decimal_point):
+    '''truncate number to "nb_decimal_point" decimal points'''
+    integer, decimal = str(num).split('.')
+    d_formater = '{:0<' + str(nb_decimal_point) + '}'
+    decimal = d_formater.format(decimal)
+    return '.'.join([integer, decimal[:nb_decimal_point]])
