@@ -55,21 +55,27 @@ class Anomaly_Detector(object):
     def process_stream(self, event):
         '''Process stream-in event'''
         to_return = None
+        
         if event['event_type'] == 'befriend' or event['event_type'] == 'unfriend':
             uid_1, uid_2 = event['id1'], event['id2']
             getattr(self.users[uid_1], event['event_type'])(uid_2)
             getattr(self.users[uid_2], event['event_type'])(uid_1)
+            # rebuild the network stats for all the affected users
             friends_affected = self.find_friends(uid_1, self.D-1) | self.find_friends(uid_2, self.D-1) | {uid_1, uid_2}
             for fid in friends_affected:
                 self.users[fid].build_network_stats(self.get_network_purchase(fid, self.D, self.T))
+                
         elif event['event_type'] == 'purchase':
             uid = event['id']
+            # return event if anomalous, otherwise return None
             if self.is_anomalous(event):
                 to_return = event.copy()
                 to_return['mean'] = self.users[uid].network_mean
                 to_return['sd'] = self.users[uid].network_std
                 del to_return['time_in']
+                
             self.users[uid].update_self_purchase(event['timestamp'], event['time_in'], event['amount'])
+            # update users within D degree network 
             friends_affected = self.find_friends(uid, self.D)
             for fid in friends_affected:
                 self.users[fid].update_network_stats(event['timestamp'], event['time_in'], event['amount'])
@@ -81,6 +87,7 @@ class Anomaly_Detector(object):
         '''Find friends in user's D-degree network'''
         friend_ids = set()
         deg = 0
+        # BFS 
         curr_level = {user_id}
         while deg < D and len(curr_level) != 0:
             nxt_level = set()
