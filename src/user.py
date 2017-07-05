@@ -24,8 +24,8 @@ class User(object):
         self.network_purchase = []
         self.network_mean = -1
         self.network_std = -1
-        self.purchase_history = []  #To be use if there is a desire to change T in the middle of processing
-                                    #Related function have not been implemented
+        self.purchase_history = []  #To be used if there is a desire to change T in the middle of processing
+                                    #Related functions have not been implemented
         
     def befriend(self, user_id):
         '''Add someone to friends'''
