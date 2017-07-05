@@ -55,7 +55,7 @@ To speed up, each information of an user are updated in a rolling style. But if 
 Read: parse a json string into `OrderedDict`, and add an additional timestamp to represent the stream-in time.   
 Write: translate `OrderedDict` into a json string.
 
-## Discussion
+## Further Discussion
 #### 1. Whether it is good or not to keep track of the network purchases for each user? (use heap implementation)    
 Assuming users have an average of `N` friends in their D degree network, when a 'purchase' event comes in, the processing time complexity is O(N logT) if we keep track the network purchases, and if we do not, the time complexity would be O(NT logT). On the other hand, if the event is 'befriend' or 'unfriend', the processing time complexity would be O(NT logT) for keeping track of network purchases and O(1) for not doing it. So if most of the event are purchases, keeping track of the network purchase for each user would save us some time; however, if there are lots of (be/un)friend events, it may turn out to be slow. Here I chose to implementation with keeping track of it because I would think 'purchase' should happen more often than '(be/un)friend'.
  
