@@ -57,5 +57,5 @@ Write: translate `OrderedDict` into a json string.
 
 ## Discussion
 1. Whether it is good or not to keep track of the network purchases for each user?   
-Assuming users have an average of `N` friends in their D degree network, when a 'purchase' event comes in, the processing time complexity is O(NT log T)
+Assuming users have an average of `N` friends in their D degree network, when a 'purchase' event comes in, the processing time complexity is O(NT logT)
 
