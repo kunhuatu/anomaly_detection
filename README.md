@@ -56,6 +56,6 @@ Read: parse a json string into `OrderedDict`, and add an additional timestamp to
 Write: translate `OrderedDict` into a json string.
 
 ## Discussion
-1. Whether it is good or not to keep track of the network purchases for each user? (use heap implementation)
+1. Whether it is good or not to keep track of the network purchases for each user? (use heap implementation)    
 Assuming users have an average of `N` friends in their D degree network, when a 'purchase' event comes in, the processing time complexity is O(N logT) if we keep track the network purchases, and if we do not, the time complexity would be O(NT logT). On the other hand, if the event is 'befriend' or 'unfriend', the processing time complexity would be O(NT logT) for keeping track of network purchases and O(1) for not doing it. 
 
