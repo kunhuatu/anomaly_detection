@@ -56,5 +56,5 @@ Read: parse a json string into `OrderedDict`, and add an additional timestamp to
 Write: translate `OrderedDict` into a json string.
 
 ## Discussion
-
+1. Whether it is good to keep track of the network purchases for each user?
 
