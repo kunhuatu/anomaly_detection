@@ -27,7 +27,7 @@ Directly execute `run.sh` in command-line (with structured default folder and fi
 
     anomaly_detection~$ ./run.sh
 
-## Approach summary
+## Approach Summary
 
 The task has been divided into three different levels: processing level, detector level, user level. An auxiliary `json_parser` is used to read and write json format. 
 
