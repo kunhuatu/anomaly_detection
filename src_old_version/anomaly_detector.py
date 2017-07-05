@@ -47,6 +47,11 @@ class Anomaly_Detector(object):
         else:
             raise ValueError('Unknown event type')
     
+    def initialize_user_network_stats(self):
+        '''Initialize the network stats of each user'''
+        for uid in self.users:
+            self.users[uid].build_network_stats(self.get_network_purchase(uid, self.D, self.T))
+        
     def process_stream(self, event):
         '''Process stream-in event'''
         to_return = None
@@ -55,10 +60,13 @@ class Anomaly_Detector(object):
             uid_1, uid_2 = event['id1'], event['id2']
             getattr(self.users[uid_1], event['event_type'])(uid_2)
             getattr(self.users[uid_2], event['event_type'])(uid_1)
-
+            # rebuild the network stats for all the affected users
+            friends_affected = self.find_friends(uid_1, self.D-1) | self.find_friends(uid_2, self.D-1) | {uid_1, uid_2}
+            for fid in friends_affected:
+                self.users[fid].build_network_stats(self.get_network_purchase(fid, self.D, self.T))
+                
         elif event['event_type'] == 'purchase':
             uid = event['id']
-            self.users[uid].build_network_stats(self.get_network_purchase(uid, self.D, self.T))
             # return event if anomalous, otherwise return None
             if self.is_anomalous(event):
                 to_return = event.copy()
@@ -67,7 +75,10 @@ class Anomaly_Detector(object):
                 del to_return['time_in']
                 
             self.users[uid].update_self_purchase(event['timestamp'], event['time_in'], event['amount'])
-            
+            # update users within D degree network 
+            friends_affected = self.find_friends(uid, self.D)
+            for fid in friends_affected:
+                self.users[fid].update_network_stats(event['timestamp'], event['time_in'], event['amount'])
         else:
             raise ValueError('Unknown event type')
         return to_return

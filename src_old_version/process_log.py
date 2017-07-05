@@ -41,6 +41,15 @@ def process_batch(batch_log, verbose=0):
             timer_end = time.time()
             print('done!  ' + 'time spent : {:.3f} s'.format(timer_end-timer_start))
         
+        ### initialize detector ###
+        if verbose: 
+            print('Initialize anomaly detector...', end='')
+            timer_start = time.time()
+        detector.initialize_user_network_stats()
+        if verbose: 
+            timer_end = time.time()
+            print('done!  ' + 'time spent : {:.3f} s'.format(timer_end-timer_start))
+        
     return detector
 
 

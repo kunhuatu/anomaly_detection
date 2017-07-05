@@ -27,19 +27,13 @@ def read_json(s):
     def str2num(d):
         if isinstance(d, OrderedDict):
             timestamp_format = '%Y-%m-%d %H:%M:%S'
-            # add timestamp of stream-in time
+            for k, v in d.items():
+                if re.match('id*', k): d[k] = int(v)
+                if k == 'amount': d[k] = float(v)
+                if k == 'T' or k == 'D': d[k] = int(v)
+                if k == 'timestamp':
+                    d[k] = get_timestamp(datetime.strptime(d[k], timestamp_format))
             d['time_in'] = get_timestamp(datetime.now())
-            # reformat values
-            if 'event_type' not in d:
-                return d
-            elif d['event_type'] == 'purchase':
-                d['id'] = int(d['id'])
-                d['amount'] = float(d['amount'])
-            elif d['event_type'] == 'befriend' or d['event_type'] == 'unfriend':
-                d['id1'] = int(d['id1'])
-                d['id2'] = int(d['id2'])
-                
-            d['timestamp'] = get_timestamp(datetime.strptime(d['timestamp'], timestamp_format))
             return d
 
     event = json.loads(s, object_pairs_hook=OrderedDict)
@@ -53,10 +47,12 @@ def write_json(obj):
     return: string (JSON)
     """
     def num2str(d):
-        d['id'] = str(d['id'])
-        d['timestamp'] = str(datetime.fromtimestamp(d['timestamp']))
-        for k in ['amount', 'mean', 'sd']:
-            d[k] = truncate(d[k], 2)
+        for k, v in d.items():
+            if re.match('id*', k): d[k] = str(v)
+            if k == 'amount' or k == 'mean' or k == 'sd': 
+                d[k] = truncate(v, 2)
+            if k == 'timestamp': 
+                d[k] = str(datetime.fromtimestamp(v))
         return d
         
     obj = num2str(obj)
