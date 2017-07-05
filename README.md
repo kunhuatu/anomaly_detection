@@ -55,4 +55,6 @@ To speed up, each information of an user are updated in a rolling style. But if 
 Read: parse a json string into `OrderedDict`, and add an additional timestamp to represent the stream-in time.   
 Write: translate `OrderedDict` into a json string.
 
+## Discussion
+
 
